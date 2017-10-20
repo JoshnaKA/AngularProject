@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<form>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Form</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+    #start{
+        border:2px solid blueviolet;
+    }
+
+</style>
+</head>
+    <body id="start">
+    <div ng-app="filmApp">
+     <div class="container" style="margin-top: 140px">
+         <p class="col-sm-4">From Date :<input type="text" class="form-control" name="from" ng-model="from"></p>
+         <p class="col-sm-4">To Date: <input type="text" class="form-control" name="to" ng-model="to"></p>
+         <div ng-controller="myCtrl">
+            <p class="col-sm-4"><input type="submit" class="form-control" ng-click="filter()" value="Submit"></p>
+                 <p ng-repeat="data in record | dateChange : from : to">
+                     {{data}}
+                 </p>
+         </div>
+
+     </div>
+    </div>
+     <div ng-view></div>
+
+
+     <script src="lib/Jquery/jquery-1.11.3.min.js"></script>
+     <script src="lib/js/bootstrap.min.js"></script>
+     <script src="lib/angular-1.4.8/angular.min.js"></script>
+     <script src="lib/angular-1.4.8/angular-resource.js"></script>
+     <script src="lib/angular-1.4.8/angular-route.js"></script>
+     <script src="lib/js/addComponets.js"></script>
+     <script src="App/filmApp.js"></script>
+
+</body>
+</html>
